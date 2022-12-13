@@ -19,65 +19,65 @@
           <div class="col-lg-8">
             <div class="section-title text-center">
               <h2 class="fw-bold mb-5">Nursery Prediction Form</h2>
-               <form>
+               <form method="POST" action="/result" >
                <div class="row form-group">
-                  <label for="parents">Parent</label>
-                  <select class="form-control" id="parents">
-                     <option value="usual">Usual</option>
-                     <option value="pretentious">Pretentious</option>
-                     <option value="great_pret">Great Pretentious</option>
+                  <label for="parent">Parent</label>
+                  <select class="form-control" name="parent">
+                     <option value="0">Usual</option>
+                     <option value="1">Pretentious</option>
+                     <option value="2">Great Pretentious</option>
                   </select>
                   <br />
                   <label for="has_nurs">Has Nursery</label>
-                  <select class="form-control" id="has_nurs">
-                     <option value="proper">Proper</option>
-                     <option value="less_proper">Less Proper</option>
-                     <option value="improper">Improper</option>
-                     <option value="critical">Critical</option>
-                     <option value="very_crit">Very Critical</option>
+                  <select class="form-control" name="has_nurs">
+                     <option value="0">Proper</option>
+                     <option value="1">Less Proper</option>
+                     <option value="2">Improper</option>
+                     <option value="3">Critical</option>
+                     <option value="4">Very Critical</option>
                   </select>
                   <br />
                   <label for="form">Form</label>
-                  <select class="form-control" id="form">
-                     <option value="complete">Complete</option>
-                     <option value="completed">Completed</option>
-                     <option value="incomplete">Incomplete</option>
-                     <option value="foster">Foster</option>
+                  <select class="form-control" name="form" d="form">
+                     <option value="0">Complete</option>
+                     <option value="1">Completed</option>
+                     <option value="2">Incomplete</option>
+                     <option value="3">Foster</option>
                   </select>
                   <br />
                   <label for="children">Children: </label>
-                  <select class="form-control" name="children" id="children">
-                     <option value="1">1</option>
-                     <option value="2">2</option>
-                     <option value="3">3</option>
-                     <option value="more">More</option>
+                  <select class="form-control" name="children" >
+                     <option value="0">1</option>
+                     <option value="1">2</option>
+                     <option value="2">3</option>
+                     <option value="3">More</option>
                   </select>
                   <br />
                   <label for="housing">Housing: </label>
-                  <select class="form-control" name="housing" id="housing">
-                     <option value="less_conv">Less Convenient</option>
-                     <option value="critical">Critical</option>
-                     <option value="convenient">Convenient</option>
+                  <select class="form-control" name="housing" >
+                     <option value="0">Less Convenient</option>
+                     <option value="1">Critical</option>
+                     <option value="2">Convenient</option>
                   </select>
                   <br />
                   <label for="finance">Finance: </label>
-                  <select class="form-control" name="finance" id="finance">
-                     <option value="inconv">Inconvenient</option>
-                     <option value="convenientfinance">Convenient</option>
+                  <select class="form-control" name="finance" >
+                     <option value="0">Inconvenient</option>
+                     <option value="1">Convenient</option>
                   </select>
                   <br />
                   <label for="social">Social: </label>
-                  <select class="form-control" name="social" id="social">
-                     <option value="slightly_prob">Slightly Problematic</option>
-                     <option value="problematic">Problematic</option>
-                     <option value="nonproblematic">Non Problematic</option>
+                  <select class="form-control" name="social" >
+                     <option value="0">Slightly Problematic</option>
+                     <option value="1">Problematic</option>
+                     <option value="2">Non Problematic</option>
                   </select>
                   <br />
                   <label for="health">Health: </label>
-                  <select class="form-control" name="health" id="health">
-                     <option value="not_recom">Not Recommended</option>
-                     <option value="recommended">Recommended</option>
-                     <option value="priority">Priority</option>
+                  <select class="form-control" name="health" >
+                     <option value="0">Not Recommended</option>
+                     <option value="1">Recommended</option>
+                     <option value="2">Priority</option>
                   </select>
                </div>
                <br />
@@ -97,11 +97,11 @@
                      <label class="custom-file-label" for="inputGroupFile01"
                      >Choose file</label
                      >
-                  </form>
-                </div>
-             </div>
-             
-          </div>
+                  
+                  </div>
+               </div>
+        
+            </div>
      
    <div class="col">
       <div class="container-lg py-4">
@@ -109,44 +109,43 @@
             <table class="table table-striped">
                <thead>
                  <tr>
-                   <th scope="col">CLASSIFIER</th>
+                   <th scope="col">classifier</th>
                  </tr>
                </thead>
                <tbody>
                  <tr>
-                   <td><input type="radio" id="linear_regression" name="CLASSIFIER" value="Linear Regression">
+                   <td><input type="radio" id="linear_regression" name="classifier" value="Linear Regression">
                      Linear Regression</td>
-                   <td><input type="radio" id="nearest_neighbor" name="CLASSIFIER" value="Nearest Neighbor">
+                   <td><input type="radio" id="nearest_neighbor" name="classifier" value="Nearest Neighbor">
                   Nearest Neighbor</td>
-                   <td> <input type="radio" id="naive_bayes" name="CLASSIFIER" value="Naive Bayes" checked>
+                   <td> <input type="radio" id="Naive Bayes" value="Naive Bayes" name="classifier" value="Naive Bayes" checked>
                   Naive Bayes</td>
                  </tr>
                  <tr>
-                   <td> <input type="radio" id="svm" name="CLASSIFIER" value="SVM">
+                   <td> <input type="radio" id="SVM" name="classifier" value="SVM">
                   SVM</td>
-                   <td> <input type="radio" id="decision_tree" name="CLASSIFIER" value="Decision Tree">
+                   <td> <input type="radio" id="Decision Tree" value="Decision Tree" name="classifier" value="Decision Tree">
                   Decision Tree</td>
-                   <td><input type="radio" id="ann" name="CLASSIFIER" value="ANN">
+                   <td><input type="radio" id="ANN" name="classifier" value="ANN">
                   ANN</td>
                  </tr>
                </tbody>
              </table>
-             <button type="submit" value="classify" class="btn btn-primary btn-lg">Classify</button>
+             <input type="submit" value="Classify" class="btn btn-primary btn-lg">
          </div>
 
          </div>
     </div>
   </div>
+  
+</form>
 </div>
 </div>
 
 </div>
 </div>
+
 </section>
-
-
-   
-    
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
