@@ -8,6 +8,7 @@ from keras.models import load_model
 dtree = joblib.load('models/dt.joblib')
 nbayes = joblib.load('models/nb.joblib')
 ann = joblib.load('models/ann.joblib')
+knn = joblib.load('models/knn.joblib')
 
 feature_labels = {
     'parent': 'Parent',
@@ -59,6 +60,8 @@ def result():
         prediction = outcomes[nbayes.predict(df_inputs)[0]]
     elif classifier == 'ANN':
         prediction = outcomes[ann.predict(df_inputs)[0]]
+    elif classifier == 'Nearest Neighbor':
+        prediction = outcomes[knn.predict(df_inputs)[0]]
     else:
         prediction = 'invalid classifier'
 
