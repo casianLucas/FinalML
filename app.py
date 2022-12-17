@@ -3,6 +3,7 @@ import csv
 import io
 import joblib
 import pandas as pd
+import pickle
 from keras.models import load_model
 
 dtree = joblib.load('models/dt.joblib')
@@ -54,6 +55,7 @@ def result():
     ]
     df_inputs = pd.DataFrame([inputs], columns=feature_labels.keys())
     classifier = request.form.get('classifier')
+
     if classifier == 'Decision Tree':
         prediction = outcomes[dtree.predict(df_inputs)[0]]
     elif classifier == 'Naive Bayes':
@@ -78,6 +80,7 @@ def result():
     #     finance = row['finance']
     #     social = row['social']
     #     health = row['health']
+
     return prediction
 
 
